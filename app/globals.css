@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+* {
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.font-Ovo {
+  font-family: var(--font-ovo), serif;
+}
+
+.info-card {
+  transition: all 0.5s ease;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.info-card:hover {
+  transform: translateY(-8px);  
+  background-color: #fcf4ff;
+  border-color: #000000 !important;
+  box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.6) !important;
+}
+
+.service-card {
+  transition: all 0.5s ease;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  background-color: #fcf4ff;
+  border-color: #000000 !important;
+  box-shadow: 8px 8px 20px 0px rgba(0, 0, 0, 0.5) !important;
+}
+
+.work-card {
+  transition: all 0.5s ease;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  border-color: #000000 !important;
+  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.4) !important;
+}
+
+.work-card img {
+  transition: transform 0.5s ease;
+}
