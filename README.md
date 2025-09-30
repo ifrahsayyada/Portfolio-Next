@@ -1,8 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio-Next
+
+A modern, responsive portfolio website built with Next.js 15 and React 19, featuring smooth animations, hover effects, and mobile-first design.
+
+## Features
+
+- **Modern Tech Stack**: Built with Next.js 15.5.4 and React 19.1.0
+- **Responsive Design**: Mobile-first approach with Tailwind CSS 4
+- **Custom Animations**: Smooth hover effects and transitions
+- **Optimized Fonts**: Google Fonts (Outfit & Ovo) with Next.js font optimization
+- **Image Optimization**: Next.js Image component for optimal performance
+- **Interactive Components**: Dynamic navbar with scroll effects and mobile menu
+
+## Components
+
+- **Navbar**: Responsive navigation with backdrop blur on scroll
+- **Header**: Hero section with introduction
+- **About**: Personal info cards with hover animations
+- **Services**: Service offerings with custom shadow effects
+- **Work**: Portfolio showcase with image optimization
+- **Contact**: Contact information and form
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -18,7 +44,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technology Stack
+
+- **Framework**: Next.js 15.5.4
+- **React**: 19.1.0
+- **Styling**: Tailwind CSS 4
+- **Fonts**: Google Fonts (Outfit, Ovo)
+- **Icons**: Custom SVG icons
+- **Development**: Turbopack for fast development
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load custom fonts.
 
 ## Learn More
 
