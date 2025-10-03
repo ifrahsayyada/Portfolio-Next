@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+/* Light theme default styles */
+html {
+  background-color: white;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark theme styles - only when .dark class is present */
+html.dark {
+  background-color: #11001F;
+}
+
+.dark body {
+  background-color: #11001F;
+  color: white;
+}
+
+/* Ensure components respect theme changes */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: white;
+}
+
+
+
 * {
   font-family: var(--font-outfit), sans-serif;
 }
