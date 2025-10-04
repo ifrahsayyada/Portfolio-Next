@@ -47,6 +47,13 @@ html.dark {
   box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.6) !important;
 }
 
+/* Dark mode hover for info cards */
+.dark .info-card:hover {
+  background-color: #2a004a;
+  border-color: #ffffff !important;
+  box-shadow: 0px 15px 40px 0px rgba(255, 255, 255, 0.2) !important;
+}
+
 .service-card {
   transition: all 0.5s ease;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
@@ -57,6 +64,13 @@ html.dark {
   background-color: #fcf4ff;
   border-color: #000000 !important;
   box-shadow: 8px 8px 20px 0px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Dark mode hover for service cards */
+.dark .service-card:hover {
+  background-color: #2a004a;
+  border-color: #ffffff !important;
+  box-shadow: 8px 8px 20px 0px rgba(255, 255, 255, 0.2) !important;
 }
 
 .work-card {

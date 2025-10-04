@@ -1,33 +1,108 @@
 import { serviceData, assets } from '../../assets/assets'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from "motion/react"
 
-const Services = () => {
+const Services = ({ isDarkMode }) => {
   return (
-    <div id='services' className='w-full px-[12%] py-10 scroll-mt-20'>
-         <h4 className='text-center mb-2 text-lg font-Ovo'>
+    <motion.div 
+      id='services' 
+      className='w-full px-[12%] py-10 scroll-mt-20'
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+         <motion.h4 
+           initial={{ y: -20, opacity: 0 }}
+           whileInView={{ y: 0, opacity: 1 }}
+           transition={{ duration: 0.5, delay: 0.3 }}
+           className='text-center mb-2 text-lg font-Ovo' 
+           style={{ color: isDarkMode ? '#d1d5db' : '#374151' }}
+         >
                 What I Do
-            </h4>
-            <h2 className='text-center text-5xl font-Ovo'>
+         </motion.h4>
+         <motion.h2 
+           initial={{ y: -20, opacity: 0 }}
+           whileInView={{ y: 0, opacity: 1 }}
+           transition={{ duration: 0.5, delay: 0.5 }}
+           className='text-center text-5xl font-Ovo' 
+           style={{ color: isDarkMode ? 'white' : 'black' }}
+         >
                 My Services
-            </h2>
-            <p className='text-center text-base sm:text-lg lg:text-xl mt-6 mb-8 max-w-2xl mx-auto font-Outfit leading-relaxed'> 
+         </motion.h2>
+         <motion.p 
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6, delay: 0.7 }}
+           className='text-center text-base sm:text-lg lg:text-xl mt-6 mb-8 max-w-2xl mx-auto font-Outfit leading-relaxed' 
+           style={{ color: isDarkMode ? '#d1d5db' : '#374151' }}
+         > 
                 I am a passionate frontend web developer with expertise in HTML, CSS, JavaScript, and React. I create visually appealing and user-friendly websites that deliver exceptional user experiences. Let's collaborate to bring your ideas to life!
-            </p>
+         </motion.p>
             
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10'>
+         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10'>
                 {serviceData.map(({ icon, title, description, link }, index) => (
-                    <div key={index} className='border border-gray-400 p-6 rounded-xl hover:-translate-y-1 duration-500 cursor-pointer transition-all service-card'>
-                        <Image src={icon} alt={title} className='w-10' />
-                        <h3 className='text-lg my-4 text-gray-700 dark:text-white font-Ovo mb-2'>{title}</h3>
-                        <p className='text-sm text-gray-600 dark:text-gray-300 leading-5 font-Outfit'>{description}</p>
-                        <a href={link} className='flex items-center gap-2 text-sm mt-5 hover:gap-3 transition-all duration-300'>
-                            Read more <Image src={assets.right_arrow} className='w-4' alt='Right Arrow' />
-                        </a>
-                    </div>
+                    <motion.div 
+                      key={index} 
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
+                      whileHover={{ 
+                        y: -10, 
+                        scale: 1.02,
+                        boxShadow: isDarkMode 
+                          ? '0 10px 30px rgba(255, 255, 255, 0.1)' 
+                          : '0 10px 30px rgba(0, 0, 0, 0.1)' 
+                      }}
+                      className='border border-gray-400 dark:border-gray-600 p-6 rounded-xl cursor-pointer transition-all service-card' 
+                      style={{ backgroundColor: isDarkMode ? 'transparent' : 'white' }}
+                    >
+                        <motion.div
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          transition={{ duration: 0.6, delay: 1 + index * 0.2, type: "spring" }}
+                        >
+                          <Image src={icon} alt={title} className='w-10' style={{ filter: isDarkMode ? 'invert(1) brightness(2)' : 'none' }} />
+                        </motion.div>
+                        <motion.h3 
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 1.1 + index * 0.2 }}
+                          className='text-lg my-4 font-Ovo mb-2' 
+                          style={{ color: isDarkMode ? 'white' : 'black' }}
+                        >
+                          {title}
+                        </motion.h3>
+                        <motion.p 
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ duration: 0.5, delay: 1.2 + index * 0.2 }}
+                          className='text-sm leading-5 font-Outfit' 
+                          style={{ color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : '#4b5563' }}
+                        >
+                          {description}
+                        </motion.p>
+                        <motion.a 
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 1.3 + index * 0.2 }}
+                          whileHover={{ x: 5 }}
+                          href={link} 
+                          className='flex items-center gap-2 text-sm mt-5 transition-all duration-300' 
+                          style={{ color: isDarkMode ? '#d1d5db' : '#374151' }}
+                        >
+                            Read more 
+                            <motion.div
+                              whileHover={{ x: 3 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <Image src={assets.right_arrow} className='w-4' alt='Right Arrow' style={{ filter: isDarkMode ? 'invert(1)' : 'none' }} />
+                            </motion.div>
+                        </motion.a>
+                    </motion.div>
                 ))} 
-            </div>
-    </div>
+         </div>
+    </motion.div>
   )
 }
 
