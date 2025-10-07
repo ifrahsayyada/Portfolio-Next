@@ -101,10 +101,70 @@ export const workData = [
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+    { 
+        icon: assets.web_icon, 
+        title: 'Web design', 
+        description: 'Web development is the process of building, programming...', 
+        link: '/services/web-design',
+        slug: 'web-design',
+        fullDescription: 'Web development is the process of building, programming, and maintaining websites and web applications. It combines creativity with technical expertise to create stunning, functional, and user-friendly digital experiences.',
+        features: [
+            'Responsive Design - Websites that work perfectly on all devices',
+            'Modern UI/UX - Clean and intuitive user interfaces',
+            'Performance Optimization - Fast loading and smooth interactions',
+            'SEO Friendly - Built with search engine optimization in mind',
+            'Cross-browser Compatibility - Works seamlessly across all browsers'
+        ],
+        technologies: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS']
+    },
+    { 
+        icon: assets.mobile_icon, 
+        title: 'Mobile app', 
+        description: 'Mobile app development involves creating software for mobile devices...', 
+        link: '/services/mobile-app',
+        slug: 'mobile-app',
+        fullDescription: 'Mobile app development involves creating software applications specifically designed for mobile devices such as smartphones and tablets. I build high-quality, scalable mobile applications that provide excellent user experiences.',
+        features: [
+            'Cross-platform Development - Build once, deploy everywhere',
+            'Native Performance - Smooth and responsive user experience',
+            'Offline Functionality - Apps that work without internet',
+            'Push Notifications - Keep users engaged',
+            'Secure Authentication - Protect user data and privacy'
+        ],
+        technologies: ['React Native', 'Flutter', 'Firebase', 'REST APIs', 'Redux']
+    },
+    { 
+        icon: assets.ui_icon, 
+        title: 'UI/UX design', 
+        description: 'UI/UX design focuses on creating a seamless user experience...', 
+        link: '/services/ui-ux-design',
+        slug: 'ui-ux-design',
+        fullDescription: 'UI/UX design focuses on creating a seamless and intuitive user experience through thoughtful interface design. I combine aesthetics with functionality to create designs that users love and that drive business results.',
+        features: [
+            'User Research - Understanding your target audience',
+            'Wireframing & Prototyping - Visualize before development',
+            'Interactive Design - Engaging and intuitive interfaces',
+            'Usability Testing - Ensuring optimal user experience',
+            'Design Systems - Consistent and scalable design patterns'
+        ],
+        technologies: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Photoshop']
+    },
+    { 
+        icon: assets.graphics_icon, 
+        title: 'Graphics design', 
+        description: 'Creative design solutions to enhance visual communication...', 
+        link: '/services/graphics-design',
+        slug: 'graphics-design',
+        fullDescription: 'Graphics design is the art of visual communication through creative design solutions. I create compelling visual content that captures attention, communicates messages effectively, and strengthens brand identity.',
+        features: [
+            'Brand Identity - Logos, color schemes, and brand guidelines',
+            'Marketing Materials - Brochures, flyers, and promotional content',
+            'Social Media Graphics - Eye-catching posts and banners',
+            'Illustrations - Custom artwork and icons',
+            'Print & Digital Design - Versatile designs for all mediums'
+        ],
+        technologies: ['Adobe Illustrator', 'Photoshop', 'InDesign', 'Canva', 'CorelDRAW']
+    },
 ]
 
 export const infoList = [

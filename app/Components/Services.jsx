@@ -1,9 +1,13 @@
+'use client'
+
 import { serviceData, assets } from '../../assets/assets'
 import React from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { motion } from "motion/react"
 
 const Services = ({ isDarkMode }) => {
+  const router = useRouter();
   return (
     <motion.div 
       id='services' 
@@ -41,9 +45,10 @@ const Services = ({ isDarkMode }) => {
          </motion.p>
             
          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10'>
-                {serviceData.map(({ icon, title, description, link }, index) => (
-                    <motion.div 
-                      key={index} 
+                {serviceData.map(({ icon, title, description, link, slug }, index) => (
+                    <motion.a
+                      href={link}
+                      key={slug || index} 
                       initial={{ opacity: 0, y: 50 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
@@ -54,7 +59,11 @@ const Services = ({ isDarkMode }) => {
                           ? '0 10px 30px rgba(255, 255, 255, 0.1)' 
                           : '0 10px 30px rgba(0, 0, 0, 0.1)' 
                       }}
-                      className='border border-gray-400 dark:border-gray-600 p-6 rounded-xl cursor-pointer transition-all service-card' 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = link;
+                      }}
+                      className='border border-gray-400 dark:border-gray-600 p-6 rounded-xl cursor-pointer transition-all service-card block no-underline' 
                       style={{ backgroundColor: isDarkMode ? 'transparent' : 'white' }}
                     >
                         <motion.div
@@ -77,29 +86,26 @@ const Services = ({ isDarkMode }) => {
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           transition={{ duration: 0.5, delay: 1.2 + index * 0.2 }}
-                          className='text-sm leading-5 font-Outfit' 
+                          className='text-sm leading-5 font-Outfit mb-5' 
                           style={{ color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : '#4b5563' }}
                         >
                           {description}
                         </motion.p>
-                        <motion.a 
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 1.3 + index * 0.2 }}
-                          whileHover={{ x: 5 }}
-                          href={link} 
-                          className='flex items-center gap-2 text-sm mt-5 transition-all duration-300' 
-                          style={{ color: isDarkMode ? '#d1d5db' : '#374151' }}
+                          className='inline-flex items-center gap-2 text-xs px-5 py-2.5 rounded-full border font-Outfit font-medium transition-all duration-300' 
+                          style={{ 
+                            color: isDarkMode ? 'white' : 'black',
+                            borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.2)',
+                            backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)'
+                          }}
                         >
                             Read more 
-                            <motion.div
-                              whileHover={{ x: 3 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              <Image src={assets.right_arrow} className='w-4' alt='Right Arrow' style={{ filter: isDarkMode ? 'invert(1)' : 'none' }} />
-                            </motion.div>
-                        </motion.a>
-                    </motion.div>
+                            <Image src={assets.right_arrow} className='w-3.5' alt='Right Arrow' style={{ filter: isDarkMode ? 'invert(1)' : 'none' }} />
+                        </motion.div>
+                    </motion.a>
                 ))} 
          </div>
     </motion.div>
