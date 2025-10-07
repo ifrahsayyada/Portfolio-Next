@@ -130,13 +130,12 @@ const Contact = ({ isDarkMode }) => {
           name='message'
         ></motion.textarea>
         <motion.button
-          initial={{ scale: 0, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ 
-            duration: 0.3, 
-            delay: 0.7,
-            type: "spring",
-            stiffness: 260
+            duration: 0.2, 
+            delay: 0.4,
+            ease: "easeOut"
           }}
           whileHover={{ 
             scale: 1.05,
@@ -178,7 +177,7 @@ const Contact = ({ isDarkMode }) => {
             transition={{ duration: 0.3 }}
             className='text-center mt-4 font-Outfit text-lg' 
             style={{ color: isDarkMode ? 'white' : 'black' }}
-          >
+          > 
             {result}
           </motion.p>
         )}

@@ -3,11 +3,13 @@
 /* Light theme default styles */
 html {
   background-color: white;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: white;
   color: black;
+  overflow-x: hidden;
 }
 
 /* Dark theme styles - only when .dark class is present */
@@ -35,55 +37,134 @@ html.dark {
   font-family: var(--font-ovo), serif;
 }
 
+/* Smooth scrolling enhancements */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Add perspective for 3D effects */
+.card-container {
+  perspective: 1000px;
+}
+
 .info-card {
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.info-card:hover::before {
+  left: 100%;
 }
 
 .info-card:hover {
-  transform: translateY(-8px);  
+  transform: translateY(-12px) scale(1.03) rotateX(2deg);  
   background-color: #fcf4ff;
   border-color: #000000 !important;
-  box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0px 25px 60px 0px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Dark mode hover for info cards */
+.dark .info-card::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
 .dark .info-card:hover {
   background-color: #2a004a;
   border-color: #ffffff !important;
-  box-shadow: 0px 15px 40px 0px rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0px 25px 60px 0px rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-12px) scale(1.03) rotateX(2deg);
 }
 
 .service-card {
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(252, 244, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.service-card:hover::after {
+  width: 300px;
+  height: 300px;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-12px) scale(1.04) rotate(-1deg);
   background-color: #fcf4ff;
   border-color: #000000 !important;
-  box-shadow: 8px 8px 20px 0px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Dark mode hover for service cards */
+.dark .service-card::after {
+  background: rgba(42, 0, 74, 0.5);
+}
+
 .dark .service-card:hover {
   background-color: #2a004a;
   border-color: #ffffff !important;
-  box-shadow: 8px 8px 20px 0px rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0px 20px 45px 0px rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-12px) scale(1.04) rotate(-1deg);
 }
 
 .work-card {
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1;
+}
+
+.work-card:hover::before {
+  opacity: 1;
 }
 
 .work-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-15px) scale(1.05);
   border-color: #000000 !important;
-  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.25) !important;
 }
 
 .work-card img {
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.work-card:hover img {
+  transform: scale(1.1);
 }

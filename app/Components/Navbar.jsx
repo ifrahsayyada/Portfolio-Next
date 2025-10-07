@@ -52,7 +52,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             {/* Dark/Light Toggle */}
             <button 
               onClick={() => setIsDarkMode(prev => !prev)}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+              className="p-2 rounded-full hover:bg-dark dark:hover:bg-dark transition-colors duration-300"
               title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               <Image 
@@ -63,7 +63,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             </button>
 
             {/* Contact Button */}
-            <a href="#contact" className={`hidden lg:flex items-center gap-3 px-10 py-3 border rounded-full ml-4 font-Ovo hover:bg-lightHover dark:hover:bg-darkHover duration-500 transition-all ${isScrolling ? 'border-gray-500 text-black dark:text-white dark:border-gray-400' : 'border-gray-500 text-black dark:border-gray-300 dark:text-gray-300'}`}>
+            <a href="#contact" className={`hidden lg:flex items-center gap-3 px-10 py-3 border-2 rounded-full ml-4 font-Ovo hover:bg-lightHover dark:hover:bg-darkHover duration-500 transition-all ${isScrolling ? 'border-black bg-white text-black dark:text-white dark:border-white dark:bg-gray-800' : 'border-black text-black bg-white/80 dark:border-white dark:text-white dark:bg-gray-800/80'}`}>
                Contact 
                <Image 
                  src={assets.arrow_icon} 
