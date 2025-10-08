@@ -40,11 +40,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
         {/* Desktop Menu */}
         <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 shadow-sm transition-all duration-500 ${isScrolling ? 'backdrop-blur-sm dark:bg-gray-800/70' : 'bg-white bg-opacity-50 dark:bg-gray-900/40'}`}>
-            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#top">Home</a></li>
-            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#about">About</a></li>
-            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#services">Services</a></li>
-            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#work">My Work</a></li>
-            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#contact">Contact me</a></li>
+            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#top">Home</a></li>
+            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#about">About</a></li>
+            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#services">Services</a></li>
+            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#work">My Work</a></li>
+            <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#contact">Contact me</a></li>
         </ul>
 
         {/* Right side buttons */}
@@ -89,11 +89,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           <Image src={assets.close_black} alt="Close" className="w-5 cursor-pointer dark:filter dark:invert" />
         </button>
       </div>
-      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#top" onClick={closeMenu}>Home</a></li>
-      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#about" onClick={closeMenu}>About</a></li>
-      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#services" onClick={closeMenu}>Services</a></li>
-      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#work" onClick={closeMenu}>My Work</a></li>
-      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="#contact" onClick={closeMenu}>Contact me</a></li>
+      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#top" onClick={closeMenu}>Home</a></li>
+      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#about" onClick={closeMenu}>About</a></li>
+      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#services" onClick={closeMenu}>Services</a></li>
+      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#work" onClick={closeMenu}>My Work</a></li>
+      <li><a className="font-Ovo cursor-pointer text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300" href="/#contact" onClick={closeMenu}>Contact me</a></li>
     </ul>
     </nav>
   )

@@ -155,19 +155,19 @@ export const serviceData = [
     },
     { 
         icon: assets.graphics_icon, 
-        title: 'Graphics design', 
-        description: 'Creative design solutions to enhance visual communication...', 
-        link: '/services/graphics-design',
-        slug: 'graphics-design',
-        fullDescription: 'Graphics design is the art of visual communication through creative design solutions. I create compelling visual content that captures attention, communicates messages effectively, and strengthens brand identity.',
+        title: 'Game Design (Beginner)', 
+        description: 'Creating engaging game concepts and interactive experiences...', 
+        link: '/services/game-design',
+        slug: 'game-design',
+        fullDescription: 'Game Design is the creative process of designing game mechanics, storylines, and player experiences. As a beginner game designer, I focus on learning and creating engaging game concepts, level designs, and interactive gameplay elements that provide fun and memorable experiences.',
         features: [
-            'Brand Identity - Logos, color schemes, and brand guidelines',
-            'Marketing Materials - Brochures, flyers, and promotional content',
-            'Social Media Graphics - Eye-catching posts and banners',
-            'Illustrations - Custom artwork and icons',
-            'Print & Digital Design - Versatile designs for all mediums'
+            'Game Concept Development - Creating unique game ideas and mechanics',
+            'Level Design - Designing engaging and balanced game levels',
+            'Character Design - Creating compelling characters and their abilities',
+            'Game Flow & Progression - Structuring gameplay and difficulty curves',
+            'Prototyping - Building simple game prototypes to test ideas'
         ],
-        technologies: ['Adobe Illustrator', 'Photoshop', 'InDesign', 'Canva', 'CorelDRAW']
+        technologies: ['Unity', 'Unreal Engine', 'Figma', 'Blender (Basic)', 'Game Maker Studio']
     },
 ]
 
