@@ -82,21 +82,25 @@ export const workData = [
         title: 'Frontend project',
         description: 'Web Design',
         bgImage: '/work-1.png?v=20251003',
+        link: 'https://github.com/ifrahsayyada/404-error',
     },
     {
         title: 'News Magazine',
         description: 'Mobile App',
         bgImage: '/work-2.png',
+        link: 'https://github.com/ifrahsayyada/NewsMAg.git',
     },
     {
         title: 'Portfolio site',
         description: 'Web Design',
         bgImage: '/work-3.png',
+        link: 'https://ifrahsayyada.vercel.app',
     },
     {
         title: 'UI/UX designing',
         description: 'UI/UX Design',
         bgImage: '/work-4.png',
+        link: 'https://www.figma.com/design/PEl4XCYGru8L8ykJK0HNla/Untitled?node-id=0-1&t=ym7BdOC54Qpf5VSq-1',
     },
 ]
 

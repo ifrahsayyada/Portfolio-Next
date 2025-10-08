@@ -11,7 +11,7 @@ const Services = ({ isDarkMode }) => {
   return (
     <motion.div 
       id='services' 
-      className='w-full px-[12%] py-10 scroll-mt-20'
+      className='w-full px-5 sm:px-8 lg:px-[12%] py-10 scroll-mt-20'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -91,20 +91,7 @@ const Services = ({ isDarkMode }) => {
                         >
                           {description}
                         </motion.p>
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.5, delay: 1.3 + index * 0.2 }}
-                          className='inline-flex items-center gap-2 text-xs px-5 py-2.5 rounded-full border font-Outfit font-medium transition-all duration-300' 
-                          style={{ 
-                            color: isDarkMode ? 'white' : 'black',
-                            borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.2)',
-                            backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)'
-                          }}
-                        >
-                            Read more 
-                            <Image src={assets.right_arrow} className='w-3.5' alt='Right Arrow' style={{ filter: isDarkMode ? 'invert(1)' : 'none' }} />
-                        </motion.div>
+                        
                     </motion.a>
                 ))} 
          </div>

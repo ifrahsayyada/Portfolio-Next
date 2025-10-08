@@ -75,9 +75,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             {/* Mobile Menu Toggle */}
             <button className="block md:hidden ml-3" onClick={toggleMenu}>
               <Image 
-                src={isScrolling ? assets.menu_black : assets.menu_white} 
+                src={isDarkMode ? assets.menu_white : assets.menu_black} 
                 alt="Menu" 
-                className="w-6 dark:filter dark:invert" 
+                className="w-6" 
               />
             </button>
         </div>

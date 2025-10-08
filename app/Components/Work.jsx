@@ -7,7 +7,7 @@ const Work = ({ isDarkMode }) => {
     return (
         <motion.div 
             id='work' 
-            className='w-full px-[12%] py-10 scroll-mt-20'
+            className='w-full px-5 sm:px-8 lg:px-[12%] py-10 scroll-mt-20'
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -92,7 +92,10 @@ const Work = ({ isDarkMode }) => {
                                 {project.description}
                             </motion.p>
                         </div>
-                        <motion.div 
+                        <motion.a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ scale: 0, rotate: -180 }}
                             whileInView={{ scale: 1, rotate: 0 }}
                             transition={{ 
@@ -108,9 +111,10 @@ const Work = ({ isDarkMode }) => {
                                 transition: { duration: 0.3 }
                             }}
                             className='border rounded-full border-black dark:border-white w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] dark:shadow-[2px_2px_0_#fff] transition-all duration-300 cursor-pointer'
+                            onClick={(e) => e.stopPropagation()}
                         >
-                            <Image src={assets.send_icon} alt='send icon' className='w-5 dark:invert' />
-                        </motion.div>
+                            <Image src={assets.send_icon} alt='send icon' className='w-5 dark:invert ' />
+                        </motion.a>
                     </motion.div>
                 </motion.div>
                 ))}
