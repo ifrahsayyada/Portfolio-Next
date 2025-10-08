@@ -11,7 +11,7 @@ const Services = ({ isDarkMode }) => {
   return (
     <motion.div 
       id='services' 
-      className='w-full px-5 sm:px-8 lg:px-[12%] py-10 scroll-mt-20'
+      className='w-full px-5 sm:px-8 lg:px-[12%] py-10 scroll-mt-20 mx-auto'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
